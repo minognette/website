@@ -1,0 +1,248 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*фото ручки*/
+.pen {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 30%;
+}
+
+/*ручка шариковая название товара*/
+h1 {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+}
+
+/*цена*/
+h2 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+}
+
+/*описание товара*/
+p {
+    width: 38%;
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    text-align: justify;
+}
+
+/*кнопка купить*/ 
+.button  {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    height: 20%;
+
+}
+
+/*анимация при наведении на кнопку покупки*/
+.button :hover {
+    background: #ec3636;
+}
+/*меню*/
+nav {
+    width: 100%;
+    margin: 0 auto;
+}
+
+nav::before {
+    position: absolute;
+    content: '';
+    display:block;
+    height: 8.3%;
+    width: 100%;
+    background: #373e47;
+    left: 0;
+    z-index: -1;
+}
+
+ul li {
+    float: left;
+    list-style-type: none;
+    width: 25%;
+}
+
+ul li a {
+    color: #fff;
+    height:  50px;
+    padding: 0 50px;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul li a:hover {
+    background:#858d97;
+    ;
+}
+
+
+/*кнопка купить*/
+.open-popup {
+    display: inline-block;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    background: #000000;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+/*фон сайта при открытии окна*/
+.popup__bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s all;
+}
+
+/*анимация затемнения сайта при открытии окна*/
+.popup__bg.active {
+    opacity: 1;
+    pointer-events: all;
+    transition: 0.5s all;
+}
+
+.prosto {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    width: 400px;
+    height: 150px;
+    transform: translate(-50%, -50%) scale(0);
+    background: #fff;
+    padding: 25px;
+    transition: 0.5s all;
+}
+
+/*анимация появления второго окна*/
+.prosto.active {
+    transform: translate(-50%, -50%) scale(1);
+    transition: 0.5s all;
+}
+
+/*содержимое окна*/
+.textt {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+}
+
+/*кнопка закрытия второго окна*/
+.cls {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+/*первое модальное окно*/
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: #fff;
+    width: 400px;
+    padding: 25px;
+    transition: 0.5s all;
+}
+
+/*анимация*/
+.popup.active {
+    transform: translate(-50%, -50%) scale(1);
+    transition: 0.5s all;
+}
+
+/*крестик для закрытия*/
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+/*содержимое в окне*/
+.popup label {
+    width: 100%;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+/*текст в окне*/
+.popup .label__text {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #cfd0d3;
+    margin-bottom: 5px;
+}
+
+/*строка ввода*/
+.popup input {
+    height: 45px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #cfd0d3;
+}
+
+/*фокусирвание на линии при клике*/
+.popup input:focus {
+    border-bottom: 1px solid #000;
+}
+
+/*фокусирвание на тексте при клике*/
+.popup input:focus + .label__text {
+    color: #000;
+}
+
+/*кнопки в окне*/
+.popup button {
+    width: 30%;
+    height: 30px;
+    display: inline;
+    flex-direction: inline;
+    color: #fff;
+    font-size: 13px;
+    border: 2px solid #000;
+    background: #000;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.5s all;
+    border-radius: 5px;
+
+}
+
+/*анимация при наведении на кнопки*/
+.popup button:hover {
+    background: #fff;
+    color:#000000;
+    transition: 0.5s all;
+}
